@@ -49,7 +49,7 @@ app.get("/posts/:postName", function (req, res){
 
   posts.forEach(function(post){
     if(_.lowerCase(req.params.postName) === _.lowerCase(post.title) ){
-      console.log("Match Found!");
+      res.render("post", {post: post})
     } else {
       console.log("No Match Found");
     }
